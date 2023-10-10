@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 15:00:01 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 15:33:16 by dkremer          ###   ########.fr       */
+/*   Created: 2023/10/10 17:37:02 by dkremer           #+#    #+#             */
+/*   Updated: 2023/10/10 18:21:49 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int i)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (i >= 0 && i <= 9)
-		return (1);
-	return (0);
+	char	*last_occurrence;
+
+	last_occurence = 0;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			last_occurrence = (char *)s;
+		s++;
+	}
+	return (last_occurrence);
 }
