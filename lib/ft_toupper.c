@@ -6,11 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:01:53 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 15:28:10 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/16 22:39:33 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+int	ft_toupper(char c)
 {
 	if (c >= 97 && c <= 122)
 	{
