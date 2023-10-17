@@ -6,9 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:39:46 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/14 23:59:36 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/16 23:07:31 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

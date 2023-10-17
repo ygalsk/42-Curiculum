@@ -6,13 +6,13 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:19:26 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/15 00:34:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/16 23:08:50 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_calloc(unsigned int count, unsigned int size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned int	i;
 	unsigned int	ts;
