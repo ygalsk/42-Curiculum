@@ -6,10 +6,10 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 20:18:42 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 15:00:34 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/17 23:35:59 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	count;
 
