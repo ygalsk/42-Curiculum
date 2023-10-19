@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:28:54 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/16 23:21:52 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 23:17:54 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int				ft_isascii(int a);
 int				ft_isdigit(int i);
 int				ft_isprint(int p);
 int				ft_strlen(const char *str);
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 char			*ft_strchr(const char *s, int c);
