@@ -1,0 +1,198 @@
+More information in: /Users/dkremer/francinette/temp/libft/war-machine/deepthought
+
+Errors in isdigit: /Users/dkremer/francinette/temp/libft/war-machine/tests/Part1_functions/ft_isdigit
+Test 1:
+    i = 0;
+    while (i <= 47)
+    {
+        ft_print_result(ft_isdigit(i));
+        i++;
+    }
+Expected (cat -e test01.output):
+000000000000000000000000000000000000000000000000
+Your result (cat -e user_output_test01):
+111111111100000000000000000000000000000000000000
+Test 2:
+    i = '0';
+    while (i <= '9')
+    {
+        ft_print_result(ft_isdigit(i));
+        i++;
+    }
+Expected (cat -e test02.output):
+1111111111
+Your result (cat -e user_output_test02):
+0000000000
+Errors in memcpy: /Users/dkremer/francinette/temp/libft/war-machine/tests/Part1_functions/ft_memcpy
+Test 1:
+    if (mem != ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, mem, 30);
+Expected (cat -e test01.output):
+zyxwvutsrqponmjjjjjjjjjjjjjjjj
+Your result (cat -e user_output_test01):
+dest's adress was not returned$
+zyxwvutsrqponmjjjjjjjjjjjjjjjj
+Test 3:
+    if (mem != ft_memcpy(mem, "zy\0xw\0vu\0\0tsr", 11))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, mem, 30);
+Expected (cat -e test03.output):
+zy^@xw^@vu^@^@tjjjjjjjjjjjjjjjjjjj
+Your result (cat -e user_output_test03):
+dest's adress was not returned$
+zy^@xw^@vu^@^@tjjjjjjjjjjjjjjjjjjj
+Errors in strlcpy: /Users/dkremer/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcpy
+Test 5:
+    ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 0));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test05.output):
+26$
+rrrrrr^@^@^@^@^@^@^@^@^@
+...
+
+File too large. To see full report open: /Users/dkremer/francinette/temp/libft/war-machine/errors.log
+
+✖ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
+Undefined symbols for architecture x86_64:
+  "_ft_isalnum", referenced from:
+      _main in ft_isalnum_test.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Problem creating executable for isalnum
+✔ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+ℹ Testing:
+ft_isalpha      : [OK]
+ft_isdigit      : [FAILED]
+[fail]: your isdigit just doesn't work, REALLY ?!
+
+ft_isalnum      : [MISSING]
+ft_isascii      : [OK]
+ft_isprint      : [OK]
+ft_strlen       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_bzero        : [OK] [OK] [OK] [OK]
+ft_memcpy       : [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [NO CRASH] [OK] [OK]
+[fail]: your memcpy's return is false/doesn't work with basic params
+[no crash]: your memcpy does not segv with NULL on first params
+[no crash]: your memcpy does not segv with NULL on second params
+
+ft_memmove      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [NO CRASH] [OK] [OK] [OK]
+[no crash]: your memmove does not segfault when null params is sent
+[no crash]: your memmove does not segfault when null params is sent
+
+ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [FAILED] [OK]
+[fail]: your strlcpy copies while destsize is zero, or does not return the size of the string it tried to create
+
+ft_strlcat      : [FAILED] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+[fail]: your strlcat does not work with basic input
+[fail]: your strlcat does not work with a size of 0
+
+ft_toupper      : [FAILED]
+[fail]: your toupper just doesn't work, REALLY ?!
+
+ft_tolower      : [OK]
+ft_strchr       : [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK]
+[fail]: your strchr does not work with \0
+
+ft_strrchr      : [MISSING]
+ft_strncmp      : [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK]
+[fail]: your strncmp does not cast in unsigned char the diff
+[fail]: your strncmp does not work with non ascii chars
+
+ft_memchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_memcmp       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_strnstr      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_atoi         : [OK] [FAILED] [OK] [FAILED] [FAILED] [OK] [FAILED] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK]
+[fail]: your atoi does not work with positive numbers
+[fail]: your atoi does not work with random numbers
+[fail]: your atoi is not working with blanks
+[fail]: your atoi is not working with non space invisible char
+[fail]: your atoi does not work with int max value
+
+ft_calloc       : [MISSING]
+ft_strdup       : [MISSING]
+ft_substr       : [MISSING]
+ft_strjoin      : [MISSING]
+ft_strtrim      : [MISSING]
+ft_split        : [MISSING]
+ft_itoa         : [MISSING]
+ft_strmapi      : [MISSING]
+ft_striteri     : [MISSING]
+ft_putchar_fd   : [MISSING]
+ft_putstr_fd    : [MISSING]
+ft_putendl_fd   : [MISSING]
+dyld: warning: could not load inserted library './assets/malloc.dylib' into hardened process because no suitable image found.  Did find:
+	./assets/malloc.dylib: code signature in (./assets/malloc.dylib) not valid for use in process using Library Validation: mapped file has no cdhash, completely unsigned? Code has to be at least ad-hoc signed.
+ft_putnbr_fd    : [MISSING]
+
+[fail]: your isdigit just doesn't work, REALLY ?!
+ Test code:
+ 	int i;
+
+ 	i = -1;
+ 	while (i < 530)
+ 	{
+ 		if (!!ft_isdigit(i) != !!isdigit(i))
+ 			exit(TEST_FAILED);
+ 		i++;
+ 	}
+ 	exit(TEST_SUCCESS);
+
+ Diffs:
+
+
+ [fail]: your memcpy's return is false/doesn't work with basic params
+ Test code:
+ 	char src[] = "test basic du memcpy !";
+ 	char buff1[22];
+ 	char *r1 = __builtin___memcpy_chk (buff1, src, 22, __builtin_object_size (buff1, 0));
+ 	char *r2 = ft_memcpy(buff1, src, 22);
+
+ 	if (r1 != r2)
+ 		exit(TEST_FAILED);
+ 	r1 = __builtin___memcpy_chk ("", src, 0, __builtin_object_size ("", 0));
+ 	r2 = ft_memcpy("", src, 0);
+ 	if (r1 != r2)
+ 		exit(TEST_FAILED);
+ 	exit(TEST_SUCCESS);
+
+ Diffs:
+       memcpy: |test basic du memcpy !|
+    ft_memcpy: ||
+
+ [no crash]: your memcpy does not segv with NULL on first params
+ Test code:
+ 	ft_memcpy(((void *)0), "segfaulter tu dois", 17);
+
+
+ [no crash]: your memcpy does not segv with NULL on second params
+ Test code:
+ 	ft_memcpy("            ", ((void *)0), 17);
+
+
+ [no crash]: your memmove does not segfault when null params is sent
+ Test code:
+ 	char b[0xF0];
+
+ 	ft_memmove(((void *)0), b, 5);
+...
+
+File too large. To see full report open: /Users/dkremer/francinette/temp/libft/alelievr/result.log
+
+✖ Compiling tests: fsoares (my own)
+Undefined symbols for architecture x86_64:
+  "_ft_isalnum", referenced from:
+      _test_isalnum in test_isalnum-662716.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Problem compiling the tests
+
+Summary: no bonus
+
+Failed tests: substr, strncmp, toupper, strchr, split, strlcat, fsoares, putstr_fd, strlcpy, strnstr, putnbr_fd, atoi, memmove, striteri, itoa, memcpy, strmapi, putchar_fd, isdigit, strdup, putendl_fd, libftTester, isalnum, strrchr, strjoin, calloc, strtrim
+
+Passed tests: isalpha, isascii, isprint, strlen, memset, bzero, tolower, memchr, memcmp
