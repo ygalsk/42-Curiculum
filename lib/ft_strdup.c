@@ -6,11 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:36:04 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/15 01:10:55 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:26:59 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

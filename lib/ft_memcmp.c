@@ -6,9 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:33:23 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/14 22:54:52 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:30:36 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 {

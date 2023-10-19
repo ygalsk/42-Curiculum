@@ -6,11 +6,13 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:01:53 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/16 22:39:33 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:30:01 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{

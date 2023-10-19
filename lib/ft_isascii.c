@@ -6,9 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:59:51 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 15:24:39 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:24:40 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int a)
 {

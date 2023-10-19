@@ -6,9 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:24:04 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 18:24:37 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:26:42 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

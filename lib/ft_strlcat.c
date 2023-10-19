@@ -6,11 +6,13 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:16:15 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/14 23:23:45 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:27:59 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize)
+#include "libft.h"
+
+unsigned int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
 	unsigned int	j;

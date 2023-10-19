@@ -6,13 +6,15 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:00:01 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/10 15:33:16 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/19 19:32:54 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int i)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if (i >= 0 && i <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
