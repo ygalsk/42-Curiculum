@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 13:07:37 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/22 13:22:16 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/22 16:17:52 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_putendl_fd(char *s, int fd)
 	if (s != NULL)
 	{
 		write(fd, s, ft_strlen(s));
-		write(fd, '\n', 1);
+		write(fd, "\n", 1);
 	}
 }
