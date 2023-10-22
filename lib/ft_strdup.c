@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:36:04 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/19 17:26:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/22 14:11:45 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,13 @@
 
 char	*ft_strdup(const char *s1)
 {
-	unsigned int	len;
-	char			*s2;
-	char			*dst;
-	const char		*src;
+	size_t	len;
+	char	*s2;
 
-	if (s1 == 0)
-		return (0);
-	len = 0;
-	while (s1[len] != '\0')
-		len++;
-	s2 = (char *)malloc(len + 1);
-	if (s2 == 0)
-		return (0);
-	dst = s2;
-	src = s1;
-	while (*src != '\0')
-	{
-		*dst = *src;
-		dst ++;
-		src++;
-	}
-	*dst = '\0';
+	len = ft_strlen(s1) + 1;
+	s2 = (char *)malloc(len);
+	if (!s2)
+		return (NULL);
+	ft_memcpy(s2, s1, len);
 	return (s2);
 }

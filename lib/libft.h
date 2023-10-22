@@ -6,13 +6,14 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:28:54 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/19 23:47:49 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/21 03:47:55 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 // ALL PRTOTTYPES FOR LIBFT.ALL
@@ -22,7 +23,7 @@ int				ft_isalpha(int c);
 int				ft_isascii(int a);
 int				ft_isdigit(int i);
 int				ft_isprint(int p);
-size_t			ft_strlen(const char *str);
+size_t			ft_strlen(const char *s);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
