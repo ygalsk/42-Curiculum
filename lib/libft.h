@@ -39,7 +39,7 @@ void			*ft_memchr(const void *s, int c, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, unsigned int n);
 char			*ft_strnstr(const char *hay, const char *nee, size_t len);
 int				ft_atoi(const char *str);
-void			*ft_calloc(unsigned int count, unsigned int size);
+void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);

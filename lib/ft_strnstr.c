@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:19:24 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/16 23:22:38 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 03:15:50 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,17 @@ char	*ft_strnstr(const char *hay, const char *nee, size_t len)
 
 	h = 0;
 	n = 0;
-	if (nee[n] == '\0')
+	if (!hay)
+		return (NULL);
+	if (!nee || !nee[n])
 		return ((char *)hay);
-	while (hay[h] != '\0')
+	while (hay[h] && h < len)
 	{
-		while (hay[h + n] == nee[n] && (h + n) < len)
-		{
-			if (hay[h + n] == '\0' && nee[n] == '\0')
-				return ((char *)&hay[h]);
+		while (hay[h + n] == nee[n] && (h + n) < len && hay[h + n] && nee[n])
 			n++;
-		}
-		if (nee[n] == '\0')
-			return ((char *)hay + h);
+		if (!nee[n])
+			return ((char *)(hay + h));
 		h++;
 	}
-	return (0);
+	return (NULL);
 }

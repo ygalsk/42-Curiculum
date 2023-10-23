@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 23:28:15 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/19 23:44:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 02:53:14 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 && !s2)
 		return (0);
-	else if (s1 == NULL)
+	else if (!s1)
 		return (-1);
-	else if (s2 == NULL)
+	else if (!s2)
 		return (1);
 	while (n > 0 && *s1 && (*s1 == *s2))
 	{

@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:37:02 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/19 17:29:35 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 02:44:05 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last_occurrence;
+	int	i;
 
-	last_occurence = 0;
-	while (*s != '\0')
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
 	{
-		if (*s == c)
-			last_occurrence = (char *)s;
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	return (last_occurrence);
+	return (NULL);
 }

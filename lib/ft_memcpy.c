@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 20:20:09 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/19 19:45:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 01:14:37 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = (unsigned char *) dst;
-	s = (unsigned const char *) src;
-	if (!dst || !src)
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	if (dst == NULL || src == NULL)
 		return (NULL);
 	while (n > 0)
 	{

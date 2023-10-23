@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 23:16:15 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/22 13:49:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 00:57:16 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	while (i < dstsize && dst[i] != '\0')
+	while (i < dstsize && dst[i])
 		i++;
-	while (i + j < dstsize - 1 && src[j] != '\0')
+	if (i < dstsize)
 	{
-		dst[i + j] = src[j];
-		j++;
+		while (i + j < dstsize - 1 && src[j] && i + j < dstsize)
+		{
+			dst[i + j] = src[j];
+			j++;
+		}
+		dst[i + j] = '\0';
 	}
-	dst[i + j] = '\0';
-	while (src[j] != '\0')
+	while (src[j])
 		j++;
 	return (i + j);
 }

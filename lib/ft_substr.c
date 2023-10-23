@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 02:49:06 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/21 03:32:43 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 02:01:12 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (NULL);
+	if (!s || (start >= ft_strlen(s)))
+	{
+		substr = (char *)malloc(1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
 	substr = (char *)malloc(len +1);
 	if (!substr)
 		return (NULL);
