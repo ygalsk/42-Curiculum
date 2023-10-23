@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:19:24 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/23 03:15:50 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:46:29 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ char	*ft_strnstr(const char *hay, const char *nee, size_t len)
 	unsigned int	n;
 
 	h = 0;
-	n = 0;
-	if (!hay)
-		return (NULL);
-	if (!nee || !nee[n])
+	if (!*nee)
 		return ((char *)hay);
 	while (hay[h] && h < len)
 	{
-		while (hay[h + n] == nee[n] && (h + n) < len && hay[h + n] && nee[n])
+		n = 0;
+		while (hay[h + n] == nee[n] && (h + n) < len && nee[n])
 			n++;
 		if (!nee[n])
 			return ((char *)(hay + h));
