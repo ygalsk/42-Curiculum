@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: daniel.kremer <daniel.kremer@hotmail.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 14:59:40 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/16 23:09:46 by dkremer          ###   ########.fr       */
+/*   Created: 2023/10/24 04:58:37 by daniel.kremer     #+#    #+#             */
+/*   Updated: 2023/10/24 04:58:37 by daniel.kremer    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
