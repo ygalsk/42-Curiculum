@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:55:21 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/24 17:52:17 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/27 02:54:07 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char		*res;
+	char			*res;
 
 	if (!s || !f)
 		return (NULL);
