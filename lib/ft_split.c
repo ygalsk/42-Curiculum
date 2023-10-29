@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 21:22:58 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/28 21:23:02 by dkremer          ###   ########.fr       */
+/*   Created: 2023/10/29 16:13:54 by dkremer           #+#    #+#             */
+/*   Updated: 2023/10/29 16:14:09 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**sft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
+	char	*s1;
 }
