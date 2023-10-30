@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 02:49:06 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/23 02:01:12 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/30 01:44:55 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[0] = '\0';
 		return (substr);
 	}
-	substr = (char *)malloc(len +1);
+	substr = (char *)malloc(len + 1);
 	if (!substr)
 		return (NULL);
 	while (s[start + i] && i < len)

@@ -6,12 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:59:54 by dkremer           #+#    #+#             */
-/*   Updated: 2023/10/29 20:18:21 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:58:20 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -32,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	len = end - start + 1;
 	if (len == 0)
-		return ((ft_strdup("")));
+		return (trim);
 	res = (char *)malloc(len + 1);
 	if (!res)
 		return (NULL);
