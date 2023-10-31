@@ -1,44 +1,74 @@
 /* ************************************************************************** */
-/*            */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 11:59:10 by prossi            #+#    #+#             */
-/*   Updated: 2023/10/30 00:46:30 by dkremer          ###   ########.fr       */
+/*   Created: 2023/10/30 15:37:03 by dkremer           #+#    #+#             */
+/*   Updated: 2023/10/30 20:34:08 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count(char *s, char c)
+size_t	ft_count(char const *s, char c)
 {
-	size_t	i;
-	int		x;
+	size_t	count;
 
+	count = 0;
 	while (*s)
 	{
-		if (*s != c && x == 0)
-		{
-			x = 1;
-			i++;
-		}
-		else if (*s == c)
-			x = 0;
-		s++;
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s && *s != c)
+			s++;
 	}
-	return (i);
+	return (count);
 }
 
-void	ft_free(char **substrs, size_t count)
+void	ft_free(char **substrs)
 {
-	while (count > 0)
+	int	i;
+
+	i = 0;
+	while (substrs[i])
 	{
-		count--;
-		free(substrs[count]);
+		free(substrs[i]);
+		i++;
 	}
 	free(substrs);
+}
+
+void	ft_suballoc(char **substrs, char const *s, char c)
+{
+	char		**sub_strs;
+	char const	*temp;
+
+	sub_strs = substrs;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		temp = s;
+		if (*s)
+		{
+			temp = s;
+			while (*temp && *temp != c)
+				temp++;
+			*sub_strs = ft_substr(s, 0, temp - s);
+			if (!*sub_strs)
+			{
+				ft_free(sub_strs);
+				return ;
+			}
+			sub_strs++;
+		}
+		s = temp;
+	}
+	*sub_strs = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -48,12 +78,10 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	count = ft_count((char *)s, c);
+	count = ft_count(s, c);
 	substrs = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!substrs)
-	{
-		ft_free(substrs, count);
 		return (NULL);
-	}
+	ft_suballoc(substrs, s, c);
 	return (substrs);
 }
