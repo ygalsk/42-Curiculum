@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 17:06:34 by dkremer           #+#    #+#             */
-/*   Updated: 2023/11/21 16:33:30 by dkremer          ###   ########.fr       */
+/*   Created: 2023/10/27 02:28:36 by dkremer           #+#    #+#             */
+/*   Updated: 2023/10/27 02:29:24 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+void	*ft_memset(void *ptr, int value, size_t num)
+{
+	unsigned char	*p;
+	unsigned char	bvalue;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strchr(const char *s, int n);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-#endif
+	bvalue = (unsigned char)value;
+	p = (unsigned char *) ptr;
+	while (num > 0)
+	{
+		*p = bvalue;
+		p++;
+		num--;
+	}
+	return (ptr);
+}

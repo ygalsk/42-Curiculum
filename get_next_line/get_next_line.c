@@ -6,12 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:25:02 by dkremer           #+#    #+#             */
-/*   Updated: 2023/11/04 17:56:00 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/11/21 16:45:21 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
 
 void	ft_free(char **substrs)
 {
@@ -49,7 +48,7 @@ char	*join_line(int nl_position, char **buffer)
 
 char	*ft_read_line(int fd, char **buffer, char *read_return)
 {
-	ssize_t	bytes_read;
+	size_t	bytes_read;
 	char	*tmp;
 	char	*nl;
 
