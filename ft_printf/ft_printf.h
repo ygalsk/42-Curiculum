@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:21:00 by dkremer           #+#    #+#             */
-/*   Updated: 2023/11/22 19:45:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/11/22 21:34:31 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdint.h>
 # include "libft/libft.h"
 
 int	ft_printf_char(int c);
