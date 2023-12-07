@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: dkremer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 17:25:02 by dkremer           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/11/21 16:45:21 by dkremer          ###   ########.fr       */
-=======
-/*   Updated: 2023/11/18 22:09:04 by dkremer          ###   ########.fr       */
->>>>>>> 287ca61bf01fe4596b1c03cc1e765e13ac240fd6
+/*   Created: 2023/12/07 16:51:22 by dkremer           #+#    #+#             */
+/*   Updated: 2023/12/07 17:01:10 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 //
 // #include "get_next_line.h"
 //
@@ -147,13 +144,10 @@ char	*get_remainder(char *line)
 
 char	*func(char *remainder, char *buffer)
 {
-<<<<<<< HEAD
 	size_t	bytes_read;
 	char	*tmp;
 	char	*nl;
-=======
 	char	*new_remainder;
->>>>>>> 287ca61bf01fe4596b1c03cc1e765e13ac240fd6
 
 	new_remainder = ft_strjoin(remainder, buffer);
 	if (new_remainder == NULL)

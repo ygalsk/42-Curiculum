@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: dkremer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 17:06:34 by dkremer           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/11/21 16:33:30 by dkremer          ###   ########.fr       */
-=======
-/*   Updated: 2023/11/15 13:52:48 by dkremer          ###   ########.fr       */
->>>>>>> 287ca61bf01fe4596b1c03cc1e765e13ac240fd6
+/*   Created: 2023/12/07 16:52:52 by dkremer           #+#    #+#             */
+/*   Updated: 2023/12/07 16:59:47 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +17,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-<<<<<<< HEAD
 #  define BUFFER_SIZE 10
-=======
-#  define BUFFER_SIZE 5
->>>>>>> 287ca61bf01fe4596b1c03cc1e765e13ac240fd6
 # endif
 
 char	*get_next_line(int fd);
