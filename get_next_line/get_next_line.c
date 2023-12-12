@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:00:10 by dkremer           #+#    #+#             */
-/*   Updated: 2023/12/11 14:55:46 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/12/12 14:21:21 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	read_return(= (char *)malloc(BUFFER_SIZE + 1));
+	read_return = ((char *)malloc(BUFFER_SIZE + 1));
 	if (!read_return)
 		return (NULL);
 	if (!buf[fd])
