@@ -6,14 +6,17 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:04:17 by dkremer           #+#    #+#             */
-/*   Updated: 2023/12/12 14:44:56 by dkremer          ###   ########.fr       */
+/*   Updated: 2023/12/15 23:38:13 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == (char)c)
@@ -30,7 +33,9 @@ size_t	ft_strlen(const char *s)
 	size_t	count;
 
 	count = 0;
-	while (s[count] != '\0')
+	if (!s)
+		return (0);
+	while (s[count])
 		count++;
 	return (count);
 }
@@ -54,27 +59,25 @@ char	*ft_strdup(const char *s1)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s3;
-	int		i;
+	size_t		i;
+	size_t	j;
 
-	i = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	s3 = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!s3)
 		return (NULL);
-	while (*s1)
+	i = 0;
+	j = 0;
+	while (s1[i])
+		s3[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
 	{
-		s3[i] = *s1;
-		i++;
-		s1++;
-	}
-	while (*s2)
-	{
-		s3[i] = *s2;
-		i++;
-		s2++;
+		s3[j++] = s2[i++];
 	}
 	s3[i] = '\0';
+	free(s1);
 	return (s3);
 }
 
