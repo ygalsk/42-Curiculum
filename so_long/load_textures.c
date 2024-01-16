@@ -6,44 +6,68 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 21:58:44 by dkremer           #+#    #+#             */
-/*   Updated: 2024/01/16 22:48:11 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/01/17 00:27:44 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib/MLX42/include/MLX42/MLX42.h"
 #include "so_long.h"
 
-mlx_t	*load_textures(void)
+t_texture_manager	*init_texture_manager(char **paths, size_t num_textures)
 {
-	mlx_texture_t	**textures;
-	mlx_image_t		**img;
-	mlx_t			*mlx;
+	t_texture_manager	*manager;
 
-	textures = (mlx_texture_t **)malloc(sizeof(mlx_texture_t *));
-	if (!textures)
+	manager = (t_texture_manager *)malloc(sizeof(t_texture_manager));
+	if (!manager)
 		error();
-	img = (mlx_image_t **)malloc(sizeof(mlx_image_t *));
-	if (!img)
+	manager->num_textures = num_textures;
+	manager->texture_paths = paths;
+	manager->textures = NULL;
+	manager->images = NULL;
+	manager->mlx = NULL;
+	return (manager);
+}
+
+void	load_and_display_textures(t_texture_manager *manager)
+{
+	size_t	i;
+
+	manager->textures = (mlx_texture_t **)malloc(manager->num_textures
+			* sizeof(mlx_texture_t *));
+	manager->images = (mlx_image_t **)malloc(manager->num_textures
+			* sizeof(mlx_image_t *));
+	manager->mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
+	if (!manager->mlx || !manager->textures || !manager->images)
 		error();
-	mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
-	if (!mlx)
-		error();
-	// Try to load the file
-	textures[0] = mlx_load_png(PLAYER_PNG);
-	textures[1] = mlx_load_png(COLLECTIBLE_PNG);
-	if (!textures)
-		error();
-	// Convert texture to a displayable image
-	img[0] = mlx_texture_to_image(mlx, textures[0]);
-	img[1] = mlx_texture_to_image(mlx, textures[1]);
-	if (!img)
-		error();
-	// Display the image
-	if (mlx_image_to_window(mlx, img[0], 0, 0) < 0)
-		error();
-	if (mlx_image_to_window(mlx, img[1], 50, 50) < 0)
-		error();
-	free(textures);
-	free(img);
-	return (mlx);
+	i = 0;
+	while (i < manager->num_textures)
+	{
+		manager->textures[i] = mlx_load_png(manager->texture_paths[i]);
+		if (!manager->textures[i])
+			error();
+		manager->images[i] = mlx_texture_to_image(manager->mlx,
+				manager->textures[i]);
+		if (!manager->images[i])
+			error();
+					// actually putting the textures on the corresponding pixel
+		if (mlx_image_to_window(manager->mlx, manager->images[i], i * 50, i
+				* 50) < 0)
+			error();
+		++i;
+	}
+}
+
+void	free_texture_manager(t_texture_manager *manager)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < manager->num_textures)
+	{
+		mlx_delete_texture(manager->textures[i]);
+		mlx_delete_image(manager->mlx, manager->images[i]);
+		++i;
+	}
+	free(manager->textures);
+	free(manager->images);
+	free(manager);
 }
