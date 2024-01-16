@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/01/17 00:24:10 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/01/17 00:34:15 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@
 # define EXIT 'E'
 
 // define textures
-# define WALL_PNG "./asssets/wall.png"
-# define FLOOR_PNG "./asssets/floor.png"
-# define PLAYER_PNG "./asssets/player.png"
-# define COLLECTIBLE_PNG "./asssets/collectible.png"
-# define EXIT_PNG "./asssets/exit.png"
+# define WALL_PNG "./assets/wall.png"
+# define FLOOR_PNG "./assets/floor.png"
+# define PLAYER_PNG "./assets/player.png"
+# define COLLECTIBLE_PNG "./assets/collectible.png"
+# define EXIT_PNG "./assets/exit.png"
 
 // Texture manager struct definition
 typedef struct s_texture_manager
