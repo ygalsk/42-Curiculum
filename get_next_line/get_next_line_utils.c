@@ -47,7 +47,7 @@ char	*ft_strchr(char *str, int c)
 	}
 	return (0);
 }
-char	*ft_strjoin(char *save, char *buf)
+char	*ft_strjoin_gnl(char *save, char *buf)
 {
 	size_t	i;
 	size_t	j;

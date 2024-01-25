@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:01:11 by dkremer           #+#    #+#             */
-/*   Updated: 2024/01/16 16:07:46 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/01/18 21:11:41 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*read_line(int fd, char *nx_line)
 			return (NULL);
 		}
 		buff[err_check] = '\0';
-		nx_line = ft_strjoin(nx_line, buff);
+		nx_line = ft_strjoin_gnl(nx_line, buff);
 	}
 	free(buff);
 	return (nx_line);
