@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   keyhooks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 20:14:00 by dkremer           #+#    #+#             */
-/*   Updated: 2024/01/22 20:26:36 by dkremer          ###   ########.fr       */
+/*   Created: 2024/02/12 17:40:50 by dkremer           #+#    #+#             */
+/*   Updated: 2024/02/13 00:40:06 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "lib/MLX42/include/MLX42/MLX42.h"
 #include "so_long.h"
 
-int	open_fd(char *path_to_map)
+void	keyhooks(void *param)
 {
-	int	fd;
+	t_game	*game;
 
-	fd = open(path_to_map, O_RDONLY);
-	if (fd == -1)
-		error();
-	close(fd);
-	return (fd);
+	game = param;
+	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+		quit_game(game);
+	return ;
 }

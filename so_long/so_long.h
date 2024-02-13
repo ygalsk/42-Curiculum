@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/01/17 00:34:15 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/13 00:59:33 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,38 @@
 # define EXIT_PNG "./assets/exit.png"
 
 // Texture manager struct definition
-typedef struct s_texture_manager
+typedef struct s_game
 {
-	mlx_texture_t	**textures;
-	mlx_image_t		**images;
 	mlx_t			*mlx;
-	size_t			num_textures;
-	char			**texture_paths;
-}					t_texture_manager;
+	char			**map;
+	char			*map_temp;
+	int				width;
+	int				height;
+	mlx_texture_t	*wall_texture;
+	mlx_texture_t	*floor_texture;
+	mlx_texture_t	*player_texture;
+	mlx_texture_t	*colle_texture;
+	mlx_texture_t	*exit_texture;
+	mlx_image_t		*wall_images;
+	mlx_image_t		*floor_images;
+	mlx_image_t		*player_images;
+	mlx_image_t		*colle_images;
+	mlx_image_t		*exit_images;
+}					t_game;
 
 void				error(void);
-t_texture_manager	*init_texture_manager(char **paths, size_t num_textures);
-void				load_and_display_textures(t_texture_manager *manager);
-void				free_texture_manager(t_texture_manager *manager);
+void				load_image(t_game *img);
+void				image_to_win(int x, int y, char c, t_game *img);
+int					render_img(t_game *img);
+int					map_file_check(char *filename);
+int					quit_game(t_game *game);
+void				keyhooks(void *param);
+void				free_img(t_game *game);
+void				free_map(t_game *game);
+// void				get_map(char *filename, t_game *game);
+int					map_file_check(char *filename);
+void	file_to_map(t_game *game, int fd);
+void	save_map(char *file, t_game *game);
+
 
 #endif

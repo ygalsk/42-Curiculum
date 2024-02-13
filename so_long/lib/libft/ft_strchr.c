@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:24:04 by dkremer           #+#    #+#             */
-/*   Updated: 2023/12/12 14:34:40 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/13 15:36:16 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	if (s == NULL)
+		return (NULL);
+	while (*s != '\0')
 	{
 		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
 	return (NULL);
 }
