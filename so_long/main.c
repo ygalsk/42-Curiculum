@@ -6,24 +6,24 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:52:27 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/13 15:29:42 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/14 12:28:53 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib/MLX42/include/MLX42/MLX42.h"
-#include "lib/libft/libft.h"
 #include "so_long.h"
 #include <stdlib.h>
 
-void	ft_init(t_game *game)
+void	game_init(t_game *game)
 {
 	mlx_set_setting(MLX_STRETCH_IMAGE, true);
-	game->mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
+	game->mlx = mlx_init(game->width * 64, game->height * 64, "so_long", true);
 	if (!game->mlx)
 		exit(EXIT_FAILURE);
 	load_image(game);
 	render_img(game);
-	mlx_loop_hook(game->mlx, keyhooks, game);
+	mlx_image_to_window(game->mlx, game->player_images, game->player_posx * 64, \
+											game->player_posy * 64);
+	mlx_key_hook(game->mlx, keyhooks, game);
 	mlx_loop(game->mlx);
 }
 
@@ -39,16 +39,23 @@ t_game	*init(void)
 	return (game);
 }
 
+void	leaks(void)
+{
+	system("leaks so_long");
+}
+
 int	main(int argc, char **argv)
 {
 	t_game	*game;
 
+	atexit(&leaks);
 	if (argc != 2)
 		exit(EXIT_FAILURE);
 	map_file_check(argv[1]);
 	game = init();
 	save_map(argv[1], game);
-	ft_init(game);
+	find_c(game);
+	game_init(game);
 	mlx_terminate(game->mlx);
-	free(game);
+	quit_game(game);
 }

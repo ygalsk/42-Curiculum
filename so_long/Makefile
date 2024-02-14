@@ -7,6 +7,7 @@ USER 			= $(shell whoami)
 # Compiler and flags
 CC 				= cc
 CFLAGS 		= -g -Wall -Werror -Wextra
+
 #MLX42 Flags
 MLXFLAGS 	= -framework Cocoa -framework OpenGL -framework IOKit -I include -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib/"
 
@@ -14,7 +15,7 @@ MLXFLAGS 	= -framework Cocoa -framework OpenGL -framework IOKit -I include -lglf
 SRCS 			= $(wildcard lib/libft/*.c lib/libft/ft_printf/*.c ./*.c)
 
 # Header files
-HEADERS 	= lib/libft/libft.h lib/libft/ft_printf/ft_printf.h
+HEADERS 	= lib/libft/libft.h lib/libft/ft_printf/ft_printf.h 
 
 # Object files
 OBJS 			= $(SRCS:.c=.o)
@@ -43,7 +44,7 @@ clean:
 # Remove all files
 fclean: clean
 	@rm -f $(NAME)
-	@echo $(RED)"Removing all files"$(DEFAULT);
+	@echo $(RED)"Removing $(NAME)"$(DEFAULT);
 
 # Rebuild everything
 re: fclean all

@@ -6,10 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:55:40 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/13 15:46:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/14 13:22:35 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "lib/MLX42/include/MLX42/MLX42.h"
 #include "so_long.h"
 
 void	load_image(t_game *game)
@@ -28,16 +29,14 @@ void	load_image(t_game *game)
 
 void	image_in_map(int x, int y, char c, t_game *img)
 {
-	if (c == 'E')
-		mlx_image_to_window(img->mlx, img->exit_images, x * 64, y * 64);
-	if (c == '1')
-		mlx_image_to_window(img->mlx, img->wall_images, x * 64, y * 64);
-	if (c == 'C')
-		mlx_image_to_window(img->mlx, img->colle_images, x * 64, y * 64);
-	if (c == '0')
+	if (c == FLOOR || c == EXIT || c == COLLECTIBLE || c == PLAYER)
 		mlx_image_to_window(img->mlx, img->floor_images, x * 64, y * 64);
-	if (c == 'P')
-		mlx_image_to_window(img->mlx, img->player_images, x * 64, x * 64);
+	if (c == EXIT)
+		mlx_image_to_window(img->mlx, img->exit_images, x * 64, y * 64);
+	if (c == WALL)
+		mlx_image_to_window(img->mlx, img->wall_images, x * 64, y * 64);
+	if (c == COLLECTIBLE)
+		mlx_image_to_window(img->mlx, img->colle_images, x * 64, y * 64);
 }
 
 int	render_img(t_game *game)
@@ -51,10 +50,26 @@ int	render_img(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
+			if (game->map[y][x] == PLAYER)
+			{
+				game->player_posx = x;
+				game->player_posy = y;
+			}
 			image_in_map(x, y, game->map[y][x], game);
 			x++;
 		}
 		y++;
 	}
 	return (0);
+}
+
+void	load_player(t_game *game)
+{
+	game->player_images = mlx_texture_to_image(game->mlx, game->player_texture);
+}
+
+void	load_map(int x, int y, char c, t_game *img)
+{
+	if (c == FLOOR || c == EXIT || c == COLLECTIBLE || c == PLAYER)
+		mlx_image_to_window(img->mlx, img->floor_images, x * 64, y * 64);
 }

@@ -6,13 +6,12 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:49:50 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/13 00:46:19 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/14 13:24:13 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib/MLX42/include/MLX42/MLX42.h"
 #include "so_long.h"
-#include <stdlib.h>
 
 void	free_map(t_game *game)
 {
@@ -41,11 +40,11 @@ void	free_img(t_game *game)
 	mlx_delete_image(game->mlx, game->floor_images);
 	mlx_close_window(game->mlx);
 	free_map(game);
-	free(game);
 }
 
 int	quit_game(t_game *game)
 {
 	free_img(game);
+	free(game);
 	exit(0);
 }

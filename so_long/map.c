@@ -6,11 +6,10 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:11:42 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/13 01:02:13 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/14 13:58:28 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib/libft/libft.h"
 #include "so_long.h"
 
 int	map_file_check(char *filename)
@@ -26,11 +25,6 @@ int	map_file_check(char *filename)
 		return (0);
 }
 
-// void	get_map(char *filename, t_game game)
-// {
-// 	
-// }
-//
 void	file_to_map(t_game *game, int fd)
 {
 	char	*line;
@@ -41,7 +35,7 @@ void	file_to_map(t_game *game, int fd)
 		game->map_temp = ft_strjoin_gnl(game->map_temp, line);
 		free(line);
 		if (!game->map_temp)
-			exit (1);
+			exit(1);
 		game->height++;
 		line = get_next_line(fd);
 	}
@@ -63,5 +57,7 @@ void	save_map(char *file, t_game *game)
 		free_map(game);
 		exit(1);
 	}
+	game->width = ft_strlen(game->map[0]);
+	find_player_position(game);
 	free(game->map_temp);
 }

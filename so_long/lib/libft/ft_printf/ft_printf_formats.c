@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:22:07 by dkremer           #+#    #+#             */
-/*   Updated: 2023/12/16 22:14:33 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/14 12:05:55 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf_formats(char str, va_list args)
 
 	len = 0;
 	if (str == '\0')
-		return (-1);
+		return (0);
 	if (str == '%')
 		return (ft_printf_char('%'));
 	if (str == 'c')
